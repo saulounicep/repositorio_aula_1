@@ -5,14 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-           
-           
+           form{
+               /* fonte */
+               font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+               /* fonte */
+               background: rgb(141, 141, 119);
+               /* largura form */
+               max-width:300px;
+               /* centralizacao do form */
+               margin: 0 auto; 
+               /* centralizacao do texto */ 
+               text-align: center;  
+           }
+           #titulo{
+               /* tamnanho fonte */ 
+               font-size:26px;
+               /* background */                
+               background: grey;
+               /* centralizacao do título */             
+               padding: 10px;                    
+           }
 
-           
+           input{
+               /* largura caixa texto */
+               width: 200px;   
+               /* espacsamento interno */
+               padding: 10px;              
+           }
 
-           
-           
-           
+           #iEnviar{
+               /* cor de fundo */
+               background:slategray; 
+               /* altura */
+               height: 40px;           
+               /* largura do botao */ 
+               width: 200px;           
+               /* Fonte em negrito */
+               font-weight: bold;       
+               /* arredondar as bordas */ 
+               border-radius: 5px;     
+               /* retirar o sombreamento */
+               border: 1px solid;       
+               /* cor da borda e fonte */
+               color: rgb(255, 255, 0);        
+               /* alterar cursor */
+               cursor: pointer;        
+               /* aumentar margem inferior */
+               margin-bottom: 10px;    
+           }
+           #iEnviar:hover{
+               /* hover do botao */
+               background:rosybrown; 
+           }
+           #erro{
+             /* tamanho fonte */  
+            font-size: 14px;
+            /* cor msg erro */   
+            color: yellow;          
+           }
     </style>
 </head>
 <body>
@@ -28,6 +78,16 @@
     
 </body>
     <script>
-
+        function validar(){
+            let tUsuario = document.getElementById("iUsuario").value
+            let tSenha   = document.getElementById("iPassword").value
+            if(tUsuario.length == 0){
+              document.getElementById("erro").innerHTML = "Usuário é obrigatório"
+              return false;
+            }else if (tSenha.length == 0) {
+              document.getElementById("erro").innerHTML = "Senha é obrigatória"
+              return false;
+            }
+        }
     </script>
 </html>
